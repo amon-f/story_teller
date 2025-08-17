@@ -188,6 +188,44 @@ footer {
   transform: scale(1.15);
 }
 
+/* Work Image Overlay */
+.work-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.work-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.65) 80%, rgba(0,0,0,0.1) 100%);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 0 0 0.75rem 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+.work-img-wrapper:hover .work-overlay,
+.work-img-wrapper:focus .work-overlay {
+  opacity: 1;
+}
+
+.work-overlay span {
+  background: var(--primary-red);
+  padding: 0.25em 0.75em;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
 /* Responsive: stack social icons below menu on mobile */
 @media (max-width: 991.98px) {
   .navbar-nav {
