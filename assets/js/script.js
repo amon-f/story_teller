@@ -51,3 +51,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// Scroll to Top Button
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollBtn = document.getElementById("scrollToTop");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
+    }
+  });
+  scrollBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
