@@ -35,3 +35,19 @@ document.getElementById("contact-form").addEventListener("submit", function(even
       console.error("EmailJS Error:", error);
     });
 });
+
+// Contact form submission with clear on submit
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Optionally, handle sending the form here (AJAX/EmailJS/etc.)
+      form.reset();
+      status.textContent = "Thank you! Your message has been sent.";
+      setTimeout(() => { status.textContent = ""; }, 5000);
+    });
+  }
+});
