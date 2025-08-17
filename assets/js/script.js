@@ -1,27 +1,10 @@
- document.getElementById('year').textContent = new Date().getFullYear();
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
 
-    const galleryImages = document.querySelectorAll('.gallery img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
+// Init AOS
+AOS.init({ duration: 1000, once: true });
 
-    galleryImages.forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('active');
-      });
-    });
-
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
-
-    // Init AOS
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-
-    // Navbar scroll effect
+// Navbar scroll effect
 window.addEventListener("scroll", function() {
   const navbar = document.querySelector(".navbar");
   if (window.scrollY > 50) {
@@ -29,4 +12,26 @@ window.addEventListener("scroll", function() {
   } else {
     navbar.classList.remove("scrolled");
   }
+});
+
+// Initialize EmailJS
+(function() {
+  emailjs.init("fy-vdsqCYpipDJsWJ"); // Replace with your EmailJS Public Key
+})();
+
+// Handle Contact Form
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  emailjs.sendForm("service_f13czhp", "template_ltoqixl", this)
+    .then(function() {
+      document.getElementById("form-status").textContent = "Your message has been sent successfully!";
+      document.getElementById("form-status").classList.remove("text-danger");
+      document.getElementById("form-status").classList.add("text-success");
+    }, function(error) {
+      document.getElementById("form-status").textContent = "Failed to send message. Please try again.";
+      document.getElementById("form-status").classList.remove("text-success");
+      document.getElementById("form-status").classList.add("text-danger");
+      console.error("EmailJS Error:", error);
+    });
 });
