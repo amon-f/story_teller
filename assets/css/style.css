@@ -34,6 +34,8 @@ body {
 /* Improved Navbar Menu */
 .navbar-nav {
   gap: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navbar-nav .nav-link {
@@ -173,7 +175,20 @@ footer {
   border-top: 3px solid var(--primary-red);
 }
 
-/* Responsive: Center menu on mobile */
+/* Social icons styling */
+.navbar-social a {
+  color: var(--primary-red);
+  transition: color 0.2s, transform 0.2s;
+  font-size: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+}
+.navbar-social a:hover {
+  color: var(--black);
+  transform: scale(1.15);
+}
+
+/* Responsive: stack social icons below menu on mobile */
 @media (max-width: 991.98px) {
   .navbar-nav {
     gap: 0;
@@ -184,5 +199,10 @@ footer {
     margin: 0.25rem auto;
     width: 90%;
     display: block;
+  }
+  .navbar-social {
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
   }
 }
