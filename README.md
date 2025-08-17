@@ -1,8 +1,6 @@
 # 📖 Thee Story Teller -- Photography Portfolio Website
 
 ![Website Preview](./assets/image/preview.png)\
-*(Replace `preview.png` with your actual screenshot image --- e.g.,
-homepage screenshot)*
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)\
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)\
@@ -148,12 +146,12 @@ Then enable Pages in your repo settings.
 
 ## 📸 Live Demo
 
-👉 *(Add your live GitHub Pages or Netlify link here once deployed)*
+👉 ![Live Link] (https://amon-f.github.io/story_teller/)\
 
 ------------------------------------------------------------------------
 
 ## 👤 Author
 
-**Thee Story Teller**\
+**Amon Wanyonyi**\
 📧 Email: `programseduc@gmail.com`\
 📍 Nairobi, Kenya
